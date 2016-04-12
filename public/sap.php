@@ -72,6 +72,10 @@
     var purchaseApp = angular.module("contApp", []);
     purchaseApp.controller("contController", function ($scope) {
         $scope.conts = model.items;
+
+        function GetConts(){
+
+        }
     });
 </script>
 </body>
