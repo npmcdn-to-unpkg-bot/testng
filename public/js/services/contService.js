@@ -5,8 +5,8 @@ angular.module('contService', [])
     .factory('Cont', function($http) {
         return {
             // get all the comments
-            get: function () {
-                return $http.get('/api');
+            get: function (pageNumber) {
+                return $http.get('/api?page='+pageNumber);
             }
         }
     });
