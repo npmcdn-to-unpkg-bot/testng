@@ -36,7 +36,7 @@
         </tr>
         </tbody>
     </table>
-    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-change="pageChanged()"></uib-pagination>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" ng-change="pageChanged()"></uib-pagination>
 </div>
 <script src="js/angular-1.5.3/angular.js"></script>
 <script src="js/angular-1.5.3/angular-animate.min.js"></script>

@@ -19,8 +19,17 @@ class ContinuationController extends Controller
     public function index(Continuation $cont)
     {
         //
-
-        return Response::json($cont->get());
+        //dd($cont->join('authors', 'author_id', '=', 'authors.id')->join('genres', 'genre_id', '=', 'genres.id')->first());
+        return Response::json($cont->
+            join('authors', 'author_id', '=', 'authors.id')->
+            join('genres', 'genre_id', '=', 'genres.id')->
+            select('continuations.id',
+            'title',
+            'continuations.link',
+            'size',
+            'time',
+            'authors.link as alink',
+            'authors.name as aname','genres.genre')->paginate(10));
     }
 
     /**
