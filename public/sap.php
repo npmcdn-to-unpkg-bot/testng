@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <div class="page-header">
@@ -27,7 +28,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="cont in conts">
-            <td>{{$index + (currentPage * itemsPerPage - itemsPerPage) + 1}}</td>
+            <td>{{cont.id}}</td>
             <td><a href="{{cont.link}}">{{cont.title}}</a></td>
             <td>{{cont.size}}</td>
             <td>{{cont.time}}</td>
