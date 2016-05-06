@@ -22,15 +22,11 @@ angular.module('mainCtrl', []).controller('mainController', function($scope, $ht
                     $scope.totalItems = res.data.total;
                     $scope.currentPage = res.data.current_page;
                     $scope.loading = false;
-                    $log.log('$scope.totalItems '+$scope.totalItems);
                 },function(data){})
         };
 
         $scope.$watch('currentPage', function() {
             $scope.getConts($scope.currentPage);
         });
-        $scope.pageChanged = function() {
-            $log.log('Page changed to: ' + $scope.currentPage);
-        };
 
     });

@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+
+
+
 </head>
 <body>
 <div class="page-header">
@@ -15,28 +18,38 @@
 <p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
 
 <div class="panel" ng-controller="mainController">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>№</th>
-            <th>Название</th>
-            <th>Размер</th>
-            <th>Время</th>
-            <th>Автор</th>
-            <th>Жанр</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="cont in conts">
-            <td>{{cont.id}}</td>
-            <td><a href="{{cont.link}}">{{cont.title}}</a></td>
-            <td>{{cont.size}}</td>
-            <td>{{cont.time}}</td>
-            <td><a href="{{cont.alink}}">{{cont.aname}}</a></td>
-            <td>{{cont.genre}}</td>
-        </tr>
-        </tbody>
-    </table>
+
+        <div class="cont-header row">
+            <span class="col-md-1">№</span>
+            <span class="col-md-5">Название</span>
+            <span class="col-md-1">Размер</span>
+            <span class="col-md-1">Время</span>
+            <span class="col-md-2">Автор</span>
+            <span class="col-md-2">Жанр</span>
+        </div>
+        <uib-accordion>
+            <uib-accordion-group ng-repeat="cont in conts">
+                <uib-accordion-heading>
+                    <div class="row">
+                        <div class="col-md-1">{{cont.id}}</div>
+                        <div class="col-md-5"><a href="{{cont.link}}">{{cont.title}}</a></div>
+                        <div class="col-md-1">{{cont.size}}</div>
+                        <div class="col-md-1">{{cont.time}}</div>
+                        <div class="col-md-2"><a href="{{cont.alink}}">{{cont.aname}}</a></div>
+                        <div class="col-md-2">{{cont.genre}}</div>
+                    </div>
+                </uib-accordion-heading>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+                <p>This is just some content to illustrate fancy headings.</p>
+            </uib-accordion-group>
+        </uib-accordion>
     <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" ng-change="pageChanged()"></uib-pagination>
 </div>
 <script src="js/angular-1.5.3/angular.js"></script>
