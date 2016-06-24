@@ -21,7 +21,6 @@ angular.module('mainCtrl', []).controller('mainController', function($scope, $ht
                     $scope.conts = res.data.data;
                     $scope.totalItems = res.data.total;
                     $scope.currentPage = res.data.current_page;
-                    $scope.loading = false;
                 },function(data){})
         };
 
